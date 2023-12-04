@@ -20,12 +20,12 @@ namespace ProyectoBackendHerbert.Controllers
         [Route("MostrarPilotos")]
         public async Task<IActionResult> MostrarPilotos()
         {
-            List<Piloto> pilotos = aplicacionContext.Piloto.OrderByDescending(pilotos => pilotos.idAvion).ToList();
+            List<Piloto> pilotos = aplicacionContext.Piloto.OrderByDescending(pilotos => pilotos.numeroLicencia).ToList();
             return StatusCode(StatusCodes.Status200OK, pilotos);
 
         }
         [HttpPost]
-        [Route("CrearAutos")]
+        [Route("CrearPilotos")]
         public async Task<IActionResult> CrearPilotos([FromBody] Piloto piloto)
         {
             aplicacionContext.Piloto.Add(piloto);
