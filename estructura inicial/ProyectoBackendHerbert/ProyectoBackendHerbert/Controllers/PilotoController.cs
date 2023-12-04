@@ -25,7 +25,7 @@ namespace ProyectoBackendHerbert.Controllers
 
         }
         [HttpPost]
-        [Route("CrearAutos")]
+        [Route("CrearPilotos")]
         public async Task<IActionResult> CrearPilotos([FromBody] Piloto piloto)
         {
             aplicacionContext.Piloto.Add(piloto);
